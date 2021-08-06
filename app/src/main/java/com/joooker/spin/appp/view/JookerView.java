@@ -47,7 +47,7 @@ public class JookerView extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(joooker_FirebaseRemoteConfig.getString(new String(android.util.Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT)))
+        if(!joooker_FirebaseRemoteConfig.getString(new String(android.util.Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT)))
                 .equals(new String(Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT))))
         {
             CookieManager win_CookieManager = CookieManager.getInstance();

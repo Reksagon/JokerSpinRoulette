@@ -18,7 +18,7 @@ public class JoookerSplash extends AwesomeSplash {
     public void initSplash(ConfigSplash configSplash) {
         configSplash.setBackgroundColor(R.color.purple);
         configSplash.setLogoSplash(R.mipmap.ic_launcher);
-        configSplash.setRevealFlagX(Flags.REVEAL_LEFT);
+        configSplash.setRevealFlagX(Flags.WITH_LOGO);
         configSplash.setRevealFlagY(Flags.REVEAL_TOP);
         configSplash.setAnimLogoSplashTechnique(Techniques.Wobble);
         configSplash.setAnimCircularRevealDuration(2000);
