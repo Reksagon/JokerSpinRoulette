@@ -27,49 +27,49 @@ import com.unity3d.player.UnityPlayerActivity;
 
 public class JookerView extends AppCompatActivity {
 
-    FirebaseRemoteConfig joooker_FirebaseRemoteConfig;
-    ProgressBar joooker_ProgressBar;
-    WebView joooker_WebView;
+    FirebaseRemoteConfig gfR8xUZ238;
+    ProgressBar p339HPaAv;
+    WebView Zv57FmD8f7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.joooker_view);
-        joooker_ProgressBar = findViewById(R.id.joooker_progress);
-        joooker_WebView = findViewById(R.id.joooker_view);
+        p339HPaAv = findViewById(R.id.joooker_progress);
+        Zv57FmD8f7 = findViewById(R.id.joooker_view);
 
-        joooker_FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+        gfR8xUZ238 = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings joooker_FirebaseRometeConfigSettings = new FirebaseRemoteConfigSettings.Builder().build();
-        joooker_FirebaseRemoteConfig.setDefaultsAsync(R.xml.joooker_url);
-        joooker_FirebaseRemoteConfig.setConfigSettingsAsync(joooker_FirebaseRometeConfigSettings);
+        gfR8xUZ238.setDefaultsAsync(R.xml.joooker_url);
+        gfR8xUZ238.setConfigSettingsAsync(joooker_FirebaseRometeConfigSettings);
         try {
             Thread.sleep(1600);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        if(!joooker_FirebaseRemoteConfig.getString(new String(android.util.Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT)))
+        if(!gfR8xUZ238.getString(new String(android.util.Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT)))
                 .equals(new String(Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT))))
         {
             CookieManager win_CookieManager = CookieManager.getInstance();
             CookieManager.setAcceptFileSchemeCookies(true);
-            win_CookieManager.setAcceptThirdPartyCookies(joooker_WebView, true);
+            win_CookieManager.setAcceptThirdPartyCookies(Zv57FmD8f7, true);
 
-            joooker_WebView.getSettings().setSupportZoom(true);
-            joooker_WebView.getSettings().setDomStorageEnabled(true);
-            joooker_WebView.loadUrl(joooker_FirebaseRemoteConfig.getString(new String(Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT))));
-            joooker_WebView.getSettings().setJavaScriptEnabled(true);
-            joooker_WebView.getSettings().setUseWideViewPort(true);
-            joooker_WebView.setWebChromeClient(new JoookerChrome(this, joooker_ProgressBar));
-            joooker_WebView.setBackgroundColor(Color.WHITE);
-            joooker_WebView.getSettings().setLoadsImagesAutomatically(true);
-            joooker_WebView.getSettings().setLoadWithOverviewMode(true);
-            joooker_WebView.getSettings().setBuiltInZoomControls(false);
-            joooker_WebView.setWebViewClient(new JoookerWeb());
-            joooker_WebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-            joooker_WebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            Zv57FmD8f7.getSettings().setSupportZoom(true);
+            Zv57FmD8f7.getSettings().setDomStorageEnabled(true);
+            Zv57FmD8f7.loadUrl(gfR8xUZ238.getString(new String(Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT))));
+            Zv57FmD8f7.getSettings().setJavaScriptEnabled(true);
+            Zv57FmD8f7.getSettings().setUseWideViewPort(true);
+            Zv57FmD8f7.setWebChromeClient(new JoookerChrome(this, p339HPaAv));
+            Zv57FmD8f7.setBackgroundColor(Color.WHITE);
+            Zv57FmD8f7.getSettings().setLoadsImagesAutomatically(true);
+            Zv57FmD8f7.getSettings().setLoadWithOverviewMode(true);
+            Zv57FmD8f7.getSettings().setBuiltInZoomControls(false);
+            Zv57FmD8f7.setWebViewClient(new JoookerWeb());
+            Zv57FmD8f7.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            Zv57FmD8f7.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
 
-            JoookerNetwork joookerNetwork = new JoookerNetwork(joooker_WebView);
+            JoookerNetwork joookerNetwork = new JoookerNetwork(Zv57FmD8f7);
             IntentFilter winIntentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
             winIntentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
             registerReceiver(joookerNetwork, winIntentFilter);
@@ -83,7 +83,7 @@ public class JookerView extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        if(joooker_WebView.canGoBack()) joooker_WebView.goBack();
+        if(Zv57FmD8f7.canGoBack()) Zv57FmD8f7.goBack();
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
