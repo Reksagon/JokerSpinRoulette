@@ -1,4 +1,4 @@
-package com.joooker.spin.appp.view;
+package com.joooker.spin.appp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

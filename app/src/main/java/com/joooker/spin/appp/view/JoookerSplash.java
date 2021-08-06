@@ -1,11 +1,9 @@
 package com.joooker.spin.appp.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
 
 import com.daimajia.androidanimations.library.Techniques;
+import com.joooker.spin.appp.JookerView;
 import com.joooker.spin.appp.R;
 import com.viksaa.sssplash.lib.activity.AwesomeSplash;
 import com.viksaa.sssplash.lib.cnst.Flags;
