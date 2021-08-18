@@ -1,4 +1,4 @@
-package com.joooker.spin.appp;
+package com.joooker.spin.appp.app;
 
 import android.app.Application;
 

